@@ -1984,6 +1984,7 @@ const converters = {
         cid: 'ssIasZone',
         type: ['attReport', 'readRsp'],
         convert: (model, msg, publish, options) => {
+            console.log(msg);
             const zoneStatus = msg.data.data.zoneStatus;
             return {
                 contact: !(zoneStatus & 1), // Bit 1 = Contact
